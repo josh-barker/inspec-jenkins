@@ -27,7 +27,7 @@ class JenkinsUserCredentials < JenkinsCredentials
     return false unless xml
     return false unless xml.elements['privateKeySource/privateKey']
 
-    !!(xml.elements['privateKeySource/privateKey'].text)
+    !!xml.elements['privateKeySource/privateKey'].text
   end
 
   def has_passphrase?

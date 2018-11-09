@@ -24,7 +24,7 @@ class JenkinsProxy < JenkinsBase
   end
 
   def to_s
-    "Jenkins Proxy"
+    'Jenkins Proxy'
   end
 
   private

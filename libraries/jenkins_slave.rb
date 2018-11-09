@@ -46,7 +46,7 @@ class JenkinsSlave < JenkinsBase
 
   def usage_mode
     mode = try { xml.elements['//mode'].text }
-    mode.downcase if mode
+    mode && mode.downcase
   end
 
   def availability

@@ -21,19 +21,20 @@ class JenkinsBuild < JenkinsBase
   end
 
   def parameters
-    if (json && params = json[:actions].find { |a| a.key?(:parameters) })
-      # Transform:
-      #
-      #  {:parameters=>
-      #    [{:name=>"STRING_PARAM", :value=>"meeseeks"},
-      #     {:name=>"BOOLEAN_PARAM", :value=>true}]}
-      #
-      # into a nice param_name => param_value Hash
-      #
-      Hash[params[:parameters].map { |p| [p[:name], p[:value]] }]
-    else
-      {}
-    end
+    return {} unless json && json[:actions]
+
+    params = json[:actions].find { |a| a.key?(:parameters) }
+    return {} unless params
+
+    # Transform:
+    #
+    #  {:parameters=>
+    #    [{:name=>"STRING_PARAM", :value=>"meeseeks"},
+    #     {:name=>"BOOLEAN_PARAM", :value=>true}]}
+    #
+    # into a nice param_name => param_value Hash
+    #
+    Hash[params[:parameters].map { |p| [p[:name], p[:value]] }]
   end
 
   def to_s
