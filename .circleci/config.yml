@@ -20,7 +20,7 @@ jobs:
       - run:
           name: run linting
           command: |
-            rake lint || true
+            bundle exec rake lint || true
 
       - run:
           name: run tests
