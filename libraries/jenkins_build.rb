@@ -59,8 +59,6 @@ class JenkinsBuild < JenkinsBase
   end
 
   def resolve_build_tag_to_number(build_tag)
-    # validate_tag!(build_tag)
-
     build_url = "http://localhost:8080/job/#{build_name}/api/json?pretty=true"
     worker = rest_call('GET', build_url, {})
 
