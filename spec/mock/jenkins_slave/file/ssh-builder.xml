@@ -1,0 +1,21 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<slave>
+  <name>ssh-builder</name>
+  <description>A builder, but over SSH</description>
+  <remoteFS>/tmp/slave-ssh-builder</remoteFS>
+  <numExecutors>1</numExecutors>
+  <mode>NORMAL</mode>
+  <retentionStrategy class="hudson.slaves.RetentionStrategy$NoOp"/>
+  <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.28.1">
+    <host>localhost</host>
+    <port>22</port>
+    <credentialsId>38537014-ec66-49b5-aff2-aed1c19e2989</credentialsId>
+    <javaPath>/usr/bin/java</javaPath>
+    <launchTimeoutSeconds>120</launchTimeoutSeconds>
+    <maxNumRetries>5</maxNumRetries>
+    <retryWaitTime>60</retryWaitTime>
+  </launcher>
+  <label>builder linux</label>
+  <nodeProperties/>
+  <userId>chef</userId>
+</slave>

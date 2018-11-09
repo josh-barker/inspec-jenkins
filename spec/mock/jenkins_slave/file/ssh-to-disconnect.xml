@@ -1,0 +1,20 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<slave>
+  <name>ssh-to-disconnect</name>
+  <description>Jenkins slave ssh-to-disconnect</description>
+  <remoteFS>/tmp/ssh-to-disconnect</remoteFS>
+  <numExecutors>1</numExecutors>
+  <mode>NORMAL</mode>
+  <retentionStrategy class="hudson.slaves.RetentionStrategy$NoOp"/>
+  <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.28.1">
+    <host>localhost</host>
+    <port>22</port>
+    <credentialsId>jenkins-ssh-password</credentialsId>
+    <launchTimeoutSeconds>120</launchTimeoutSeconds>
+    <maxNumRetries>5</maxNumRetries>
+    <retryWaitTime>60</retryWaitTime>
+  </launcher>
+  <label></label>
+  <nodeProperties/>
+  <userId>chef</userId>
+</slave>

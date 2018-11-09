@@ -1,0 +1,4 @@
+      {
+        "status": 403,
+        "body": "<html><head><meta http-equiv='refresh' content='1;url=/login?from=%2Fcomputer%2Fssh-to-disconnect%2Fconfig.xml'/><script>window.location.replace('/login?from=%2Fcomputer%2Fssh-to-disconnect%2Fconfig.xml');</script></head><body style='background-color:white; color:white;'>\n\n\nAuthentication required\n<!--\nYou are authenticated as: anonymous\nGroups that you are in:\n  \nPermission you need to have (but didn't): hudson.model.Computer.ExtendedRead\n ... which is implied by: hudson.model.Computer.Configure\n ... which is implied by: hudson.security.Permission.GenericConfigure\n ... which is implied by: hudson.security.Permission.GenericUpdate\n ... which is implied by: hudson.security.Permission.GenericWrite\n ... which is implied by: hudson.model.Hudson.Administer\n-->\n\n</body></html>"
+      }

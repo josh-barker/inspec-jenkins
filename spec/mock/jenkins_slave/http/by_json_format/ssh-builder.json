@@ -1,0 +1,4 @@
+      {
+        "status": 200,
+        "body": "{\n  \"_class\": \"hudson.slaves.SlaveComputer\",\n  \"actions\": [\n\n  ],\n  \"assignedLabels\": [\n    {\n      \"name\": \"builder\"\n    },\n    {\n      \"name\": \"linux\"\n    },\n    {\n      \"name\": \"ssh-builder\"\n    }\n  ],\n  \"description\": \"A builder, but over SSH\",\n  \"displayName\": \"ssh-builder\",\n  \"executors\": [\n    {\n    }\n  ],\n  \"icon\": \"computer.png\",\n  \"iconClassName\": \"icon-computer\",\n  \"idle\": true,\n  \"jnlpAgent\": false,\n  \"launchSupported\": true,\n  \"loadStatistics\": {\n    \"_class\": \"hudson.model.Label$1\"\n  },\n  \"manualLaunchAllowed\": true,\n  \"monitorData\": {\n  },\n  \"numExecutors\": 1,\n  \"offline\": false,\n  \"offlineCause\": null,\n  \"offlineCauseReason\": \"\",\n  \"oneOffExecutors\": [\n\n  ],\n  \"temporarilyOffline\": false,\n  \"absoluteRemotePath\": null\n}"
+      }

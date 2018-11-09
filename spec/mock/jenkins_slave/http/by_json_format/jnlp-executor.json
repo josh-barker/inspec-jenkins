@@ -1,0 +1,4 @@
+      {
+        "status": 200,
+        "body": "{\n  \"_class\": \"hudson.slaves.SlaveComputer\",\n  \"actions\": [\n\n  ],\n  \"assignedLabels\": [\n    {\n      \"name\": \"executor\"\n    },\n    {\n      \"name\": \"freebsd\"\n    },\n    {\n      \"name\": \"jail\"\n    },\n    {\n      \"name\": \"jnlp-executor\"\n    }\n  ],\n  \"description\": \"Run test suites\",\n  \"displayName\": \"jnlp-executor\",\n  \"executors\": [\n    {\n    }\n  ],\n  \"icon\": \"computer.png\",\n  \"iconClassName\": \"icon-computer\",\n  \"idle\": true,\n  \"jnlpAgent\": true,\n  \"launchSupported\": false,\n  \"loadStatistics\": {\n    \"_class\": \"hudson.model.Label$1\"\n  },\n  \"manualLaunchAllowed\": true,\n  \"monitorData\": {\n  },\n  \"numExecutors\": 1,\n  \"offline\": false,\n  \"offlineCause\": null,\n  \"offlineCauseReason\": \"\",\n  \"oneOffExecutors\": [\n\n  ],\n  \"temporarilyOffline\": false,\n  \"absoluteRemotePath\": null\n}"
+      }

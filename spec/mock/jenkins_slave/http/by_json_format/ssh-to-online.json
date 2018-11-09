@@ -1,0 +1,42 @@
+      {
+        "status": 200,
+        "body": {
+  "_class" : "hudson.slaves.SlaveComputer",
+  "actions" : [
+    
+  ],
+  "assignedLabels" : [
+    {
+      "name" : "ssh-to-online"
+    }
+  ],
+  "description" : "Jenkins slave ssh-to-online",
+  "displayName" : "ssh-to-online",
+  "executors" : [
+    {
+      
+    }
+  ],
+  "icon" : "computer.png",
+  "iconClassName" : "icon-computer",
+  "idle" : true,
+  "jnlpAgent" : false,
+  "launchSupported" : true,
+  "loadStatistics" : {
+    "_class" : "hudson.model.Label$1"
+  },
+  "manualLaunchAllowed" : true,
+  "monitorData" : {
+    
+  },
+  "numExecutors" : 1,
+  "offline" : false,
+  "offlineCause" : null,
+  "offlineCauseReason" : "",
+  "oneOffExecutors" : [
+    
+  ],
+  "temporarilyOffline" : false,
+  "absoluteRemotePath" : null
+}
+      }

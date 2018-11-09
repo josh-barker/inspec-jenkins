@@ -1,0 +1,44 @@
+      {
+        "status": 200,
+        "body": {
+  "_class" : "hudson.slaves.SlaveComputer",
+  "actions" : [
+    
+  ],
+  "assignedLabels" : [
+    {
+      "name" : "ssh-to-disconnect"
+    }
+  ],
+  "description" : "Jenkins slave ssh-to-disconnect",
+  "displayName" : "ssh-to-disconnect",
+  "executors" : [
+    {
+      
+    }
+  ],
+  "icon" : "computer-x.png",
+  "iconClassName" : "icon-computer-x",
+  "idle" : true,
+  "jnlpAgent" : false,
+  "launchSupported" : true,
+  "loadStatistics" : {
+    "_class" : "hudson.model.Label$1"
+  },
+  "manualLaunchAllowed" : true,
+  "monitorData" : {
+    
+  },
+  "numExecutors" : 1,
+  "offline" : true,
+  "offlineCause" : {
+    "_class" : "hudson.slaves.OfflineCause$ByCLI"
+  },
+  "offlineCauseReason" : "",
+  "oneOffExecutors" : [
+    
+  ],
+  "temporarilyOffline" : false,
+  "absoluteRemotePath" : null
+}
+      }

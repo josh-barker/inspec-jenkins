@@ -1,0 +1,35 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<slave>
+  <temporaryOfflineCause class="hudson.slaves.OfflineCause$ByCLI">
+    <timestamp>1541462997175</timestamp>
+    <description>
+      <holder>
+        <owner>hudson.slaves.Messages</owner>
+      </holder>
+      <key>SlaveComputer.DisconnectedBy</key>
+      <args>
+        <string>chef</string>
+        <string> : Autobots\ ran\ out\ of\ energy</string>
+      </args>
+    </description>
+    <userId>chef</userId>
+    <message>Autobots\ ran\ out\ of\ energy</message>
+  </temporaryOfflineCause>
+  <name>ssh-to-offline</name>
+  <description>Jenkins slave ssh-to-offline</description>
+  <remoteFS>/tmp/ssh-to-offline</remoteFS>
+  <numExecutors>1</numExecutors>
+  <mode>NORMAL</mode>
+  <retentionStrategy class="hudson.slaves.RetentionStrategy$NoOp"/>
+  <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.28.1">
+    <host>localhost</host>
+    <port>22</port>
+    <credentialsId>jenkins-ssh-password</credentialsId>
+    <launchTimeoutSeconds>120</launchTimeoutSeconds>
+    <maxNumRetries>5</maxNumRetries>
+    <retryWaitTime>60</retryWaitTime>
+  </launcher>
+  <label></label>
+  <nodeProperties/>
+  <userId>chef</userId>
+</slave>
