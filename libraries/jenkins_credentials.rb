@@ -16,7 +16,7 @@ class JenkinsCredentials < JenkinsBase
   end
 
   def id
-    try { xml.elements['id'].text }
+    xml_string('id')
   end
 
   def to_s
@@ -29,9 +29,5 @@ class JenkinsCredentials < JenkinsBase
     @doc ||= begin
       read_file('/var/lib/jenkins/credentials.xml')
     end
-  end
-
-  def xml
-    raise 'must be implemented by child class'
   end
 end

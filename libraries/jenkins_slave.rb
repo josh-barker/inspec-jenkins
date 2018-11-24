@@ -37,89 +37,98 @@ class JenkinsSlave < JenkinsBase
   end
 
   def remote_fs
-    try { xml.elements['//remoteFS'].text }
+    xml_string('//remoteFS')
   end
 
   def labels
-    try { xml.elements['//label'].text.split(' ').map(&:strip) } || []
+    xml_string('//label', []) do |text|
+      text.split(' ').map(&:strip)
+    end
   end
 
   def usage_mode
-    mode = try { xml.elements['//mode'].text }
-    mode && mode.downcase
+    xml_string('//mode') do |text|
+      text.downcase
+    end
   end
 
   def availability
+    return unless xml
+
     # returns something like `hudson.slaves.RetentionStrategy$Always`
-    retention_class = try { xml.elements['//retentionStrategy'].attributes['class'] }
+    retention_class = xml.elements['//retentionStrategy'].attributes['class']
     retention_class.split('$').last if retention_class
   end
 
   def in_demand_delay
-    try { xml.elements['//inDemandDelay'].text }.to_i
+    xml_integer('//inDemandDelay', 0)
   end
 
   def idle_delay
-    try { xml.elements['//idleDelay'].text }.to_i
+    xml_integer('//idleDelay', 0)
   end
 
   def environment
-    try do
-      hash = {}
-      key = nil
+    hash = {}
+    key = nil
 
-      return hash unless xml
+    return hash unless xml
 
-      REXML::XPath.each(xml, '//tree-map/string') do |str|
-        if key
-          hash[key] = str.text
-          key = nil
-        else
-          key = str.text
-        end
+    REXML::XPath.each(xml, '//tree-map/string') do |str|
+      if key
+        hash[key] = str.text
+        key = nil
+      else
+        key = str.text
       end
-
-      hash
     end
+
+    hash
   end
 
   ############################################
   # SSH Slave Attributes
   ############################################
   def host
-    try { xml.elements['//host'].text }
+    xml_string('//host')
   end
 
   def port
-    try { xml.elements['//port'].text.to_i }
+    xml_integer('//port')
   end
 
   def java_path
-    try { xml.elements['//javaPath'].text }
+    xml_string('//javaPath')
   end
 
   def credentials_id
-    credentials_id = try { xml.elements['//credentialsId'].text }
+    return unless xml
+    return unless xml.elements['//credentialsId']
+
+    credentials_id = xml.elements['//credentialsId'].text
     credentials_xml = credentials_xml_for_id(credentials_id)
-    try { credentials_xml.elements['id'].text }
+    credentials_xml.elements['id'].text
   end
 
   def credentials_username
-    credentials_id = try { xml.elements['//credentialsId'].text }
+    return unless xml
+    return unless xml.elements['//credentialsId']
+
+    credentials_id = xml.elements['//credentialsId'].text
     credentials_xml = credentials_xml_for_id(credentials_id)
-    try { credentials_xml.elements['username'].text }
+    credentials_xml.elements['username'].text
   end
 
   def launch_timeout
-    try { xml.elements['//launchTimeoutSeconds'].text.to_i }
+    xml_integer('//launchTimeoutSeconds')
   end
 
   def ssh_retries
-    try { xml.elements['//maxNumRetries'].text.to_i }
+    xml_integer('//maxNumRetries')
   end
 
   def ssh_wait_retries
-    try { xml.elements['//retryWaitTime'].text.to_i }
+    xml_integer('//retryWaitTime')
   end
 
   ############################################
