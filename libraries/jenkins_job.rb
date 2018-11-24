@@ -18,7 +18,9 @@ class JenkinsJob < JenkinsBase
   end
 
   def disabled?
-    (try { xml.elements['//disabled'].text.to_s == 'true' }) != (nil || false)
+    xml_string('//disabled', true) do |text| 
+      text.to_s == 'true'
+    end
   end
 
   def enabled?
@@ -26,14 +28,15 @@ class JenkinsJob < JenkinsBase
   end
 
   def command
-    return unless xml
-    return unless xml.elements['//command']
-
-    xml.elements['//command'].text.strip
+    xml_string('//command') do |text|
+      text.strip
+    end
   end
 
   def plugin
-    try { xml.root.attributes['plugin'] }
+    return unless xml
+
+    xml.root.attributes['plugin']
   end
 
   def to_s

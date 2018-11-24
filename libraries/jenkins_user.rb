@@ -18,19 +18,21 @@ class JenkinsUser < JenkinsBase
   end
 
   def email
-    try { xml.elements['//emailAddress'].text }
+    xml_string('//emailAddress')
   end
 
   def full_name
-    try { xml.elements['//fullName'].text }
+    xml_string('//fullName')
   end
 
   def public_key
-    try { xml.elements['//authorizedKeys'].text.split("\n").map(&:strip) } || []
+    xml_string('//authorizedKeys', []) do |text|
+      text.split("\n").map(&:strip)
+    end
   end
 
   def password_hash
-    try { xml.elements['//passwordHash'].text }
+    xml_string('//passwordHash')
   end
 
   def to_s

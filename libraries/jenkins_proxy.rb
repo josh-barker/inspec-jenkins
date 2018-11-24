@@ -12,15 +12,17 @@ class JenkinsProxy < JenkinsBase
   end
 
   def name
-    try { xml.elements['//name'].text }
+    xml_string('//name')
   end
 
   def port
-    try { xml.elements['//port'].text.to_i }
+    xml_integer('//port')
   end
 
   def noproxy
-    try { xml.elements['//noProxyHost'].text.split("\n").map(&:strip) } || []
+    xml_string('//noProxyHost', []) do |text|
+      text.split("\n").map(&:strip)
+    end
   end
 
   def to_s

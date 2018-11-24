@@ -26,3 +26,5 @@ Metrics/CyclomaticComplexity:
   Max: 10
 Metrics/PerceivedComplexity:
   Max: 11
+Style/SymbolProc:
+  Enabled: false

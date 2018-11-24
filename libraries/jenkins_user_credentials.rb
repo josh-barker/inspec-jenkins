@@ -14,24 +14,19 @@ class JenkinsUserCredentials < JenkinsCredentials
   end
 
   def description
-    try { xml.elements['description'].text }
+    xml_string('description')
   end
 
   def has_password?
-    return false unless xml
-
-    !!(try { xml.elements['password'].text })
+    !!xml_string('password', false)
   end
 
   def has_private_key?
-    return false unless xml
-    return false unless xml.elements['privateKeySource/privateKey']
-
-    !!xml.elements['privateKeySource/privateKey'].text
+    !!xml_string('privateKeySource/privateKey', false)
   end
 
   def has_passphrase?
-    !!(try { xml.elements['passphrase'].text })
+    !!xml_string('passphrase', false)
   end
 
   def to_s

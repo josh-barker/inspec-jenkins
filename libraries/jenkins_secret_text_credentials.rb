@@ -14,9 +14,7 @@ class JenkinsSecretTextCredentials < JenkinsCredentials
   end
 
   def has_secret?
-    return false unless xml
-
-    try { !!xml.elements['secret'].text }
+    !!xml_string('secret', false)
   end
 
   def to_s

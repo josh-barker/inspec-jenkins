@@ -28,9 +28,21 @@ class JenkinsBase < Inspec.resource(1)
     end
   end
 
-  def try(&_block)
-    yield
-  rescue NoMethodError
-    nil
+  def xml; end
+
+  def xml_string(query, default_value = nil)
+    return default_value unless xml
+    return default_value unless xml.elements[query]
+    return default_value unless xml.elements[query].text
+
+    if block_given?
+      yield xml.elements[query].text
+    else
+      xml.elements[query].text
+    end
+  end
+
+  def xml_integer(query, default_value = nil)
+    xml_string(query, default_value) { |text| text.to_i }
   end
 end
