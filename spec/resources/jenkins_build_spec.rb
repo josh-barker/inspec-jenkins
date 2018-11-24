@@ -45,6 +45,10 @@ describe JenkinsBuild do
       expect(subject.exist?).to eq true
     end
 
+    it 'result is true' do
+      expect(subject.result).to eq "SUCCESS"
+    end
+
     it 'parameters is empty' do
       expect(subject.parameters).to be_empty
       expect(subject.parameters).to be_a(Hash)

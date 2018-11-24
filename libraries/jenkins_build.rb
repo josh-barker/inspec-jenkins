@@ -37,6 +37,10 @@ class JenkinsBuild < JenkinsBase
     Hash[params[:parameters].map { |p| [p[:name], p[:value]] }]
   end
 
+  def result
+    json && json[:result]
+  end
+
   def to_s
     "Jenkins Build #{build_name} ##{build_number}"
   end

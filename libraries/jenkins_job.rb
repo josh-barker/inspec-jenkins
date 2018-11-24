@@ -18,7 +18,7 @@ class JenkinsJob < JenkinsBase
   end
 
   def disabled?
-    xml_string('//disabled', true) do |text| 
+    xml_string('//disabled', true) do |text|
       text.to_s == 'true'
     end
   end

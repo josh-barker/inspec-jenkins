@@ -29,6 +29,10 @@ RSpec.shared_examples 'good builds' do
     expect(subject.exist?).to eq true
   end
 
+  it 'result is SUCCESS' do
+    expect(subject.result).to eq "SUCCESS"
+  end
+
   it 'parameters are set' do
     expect(subject.parameters).to eq({ "BOOLEAN_PARAM" => true, "STRING_PARAM" => "meeseeks" })
   end
@@ -45,6 +49,10 @@ RSpec.shared_examples 'bad builds' do
 
   it 'exist? is false' do
     expect(subject.exist?).to eq false
+  end
+
+  it 'result is nil' do
+    expect(subject.result).to be_nil
   end
 
   it 'parameters is empty' do
