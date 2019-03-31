@@ -25,7 +25,7 @@ class JenkinsUser < JenkinsBase
     xml_string('//fullName')
   end
 
-  def public_key
+  def public_keys
     xml_string('//authorizedKeys', []) do |text|
       text.split("\n").map(&:strip)
     end
