@@ -5,8 +5,7 @@ require_relative '../../libraries/jenkins_proxy'
 describe JenkinsProxy do
   let(:subject) { described_class.new }
 
-  let(:root_dir) { Dir.pwd }
-  let(:job_file) { File.join(root_dir, 'spec', 'mock', 'jenkins_proxy', 'proxy.xml') }
+  let(:job_file) { File.join(Dir.pwd, 'spec', 'mock', 'jenkins_proxy', 'proxy.xml') }
   let(:job_file_content) { IO.read(job_file) }
 
   before(:each) do

@@ -5,8 +5,7 @@ require_relative '../../libraries/jenkins_user'
 describe JenkinsUser do
   let(:subject) { described_class.new(user_id) }
 
-  let(:root_dir) { Dir.pwd }
-  let(:job_file) { File.join(root_dir, 'spec', 'mock', 'jenkins_user', "#{user_id}.xml") }
+  let(:job_file) { File.join(Dir.pwd, 'spec', 'mock', 'jenkins_user', "#{user_id}.xml") }
   let(:job_file_content) { IO.read(job_file) }
 
   before(:each) do

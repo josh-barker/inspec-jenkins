@@ -5,8 +5,7 @@ require_relative '../../libraries/jenkins_plugin'
 describe JenkinsPlugin do
   let(:subject) { described_class.new(plugin_name) }
 
-  let(:root_dir) { Dir.pwd }
-  let(:job_file) { File.join(root_dir, 'spec', 'mock', 'jenkins_plugin', "#{plugin_name}-MANIFEST.MF") }
+  let(:job_file) { File.join(Dir.pwd, 'spec', 'mock', 'jenkins_plugin', "#{plugin_name}-MANIFEST.MF") }
   let(:job_file_content) { IO.read(job_file) }
 
   before(:each) do

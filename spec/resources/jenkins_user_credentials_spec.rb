@@ -8,8 +8,7 @@ describe JenkinsUserCredentials do
 
   let(:username) { 'first' }
 
-  let(:root_dir) { Dir.pwd }
-  let(:credential_file) { File.join(root_dir, 'spec', 'mock', 'jenkins_credentials', 'credentials.xml') }
+  let(:credential_file) { File.join(Dir.pwd, 'spec', 'mock', 'jenkins_credentials', 'credentials.xml') }
   let(:credential_file_content) { IO.read(credential_file) }
 
   before(:each) do
