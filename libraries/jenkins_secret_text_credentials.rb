@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 #
-# Custom jenkins_credentials matcher
+# Custom jenkins_secret_text_credentials matcher
 #
 
 class JenkinsSecretTextCredentials < JenkinsCredentials

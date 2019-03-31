@@ -5,14 +5,14 @@ require_relative '../../libraries/jenkins_slave'
 describe JenkinsSlave do
   let(:subject) { described_class.new(slave_name) }
 
-  let(:root_dir) { Dir.pwd }
-  let(:slave_file) { File.join(root_dir, 'spec', 'mock', 'jenkins_slave', 'file', "#{slave_name}.xml") }
+  let(:root_dir) { File.join(Dir.pwd, 'spec', 'mock') }
+  let(:slave_file) { File.join(root_dir, 'jenkins_slave', 'file', "#{slave_name}.xml") }
   let(:slave_file_content) { IO.read(slave_file) }
 
-  let(:xml_response_file) { File.join(root_dir, 'spec', 'mock', 'jenkins_slave', 'http', 'by_xml_format', "#{slave_name}.json") }
-  let(:json_response_file) { File.join(root_dir, 'spec', 'mock', 'jenkins_slave', 'http', 'by_json_format', "#{slave_name}.json") }
+  let(:xml_response_file) { File.join(root_dir, 'jenkins_slave', 'http', 'by_xml_format', "#{slave_name}.json") }
+  let(:json_response_file) { File.join(root_dir, 'jenkins_slave', 'http', 'by_json_format', "#{slave_name}.json") }
 
-  let(:credential_file_content) { IO.read(File.join(root_dir, 'spec', 'mock', 'jenkins_credentials', 'credentials.xml')) }
+  let(:credential_file_content) { IO.read(File.join(root_dir, 'jenkins_credentials', 'credentials.xml')) }
 
   before(:each) do
     allow_any_instance_of(described_class).to receive(:inspec)

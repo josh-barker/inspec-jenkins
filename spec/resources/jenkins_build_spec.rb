@@ -23,10 +23,10 @@ describe JenkinsBuild do
     allow_any_instance_of(described_class).to receive(:rest_call).with('GET', build_number_response_url, {}).and_return(http)
   end
 
-  let(:root_dir) { Dir.pwd }
+  let(:root_dir) { File.join(Dir.pwd, 'spec', 'mock', 'jenkins_build')  }
   let(:computed_build_number) { }
-  let(:build_file_name) { File.join(root_dir, 'spec', 'mock', 'jenkins_build', 'by_build', "#{name}-#{computed_build_number}.json") }
-  let(:build_id_file_name) { File.join(root_dir, 'spec', 'mock', 'jenkins_build', 'by_build_and_id', "json-#{name}-#{computed_build_number}.json") }
+  let(:build_file_name) { File.join(root_dir, 'by_build', "#{name}-#{computed_build_number}.json") }
+  let(:build_id_file_name) { File.join(root_dir, 'by_build_and_id', "json-#{name}-#{computed_build_number}.json") }
 
   context 'lastSuccessfulBuild' do
     let(:name) { 'simple-execute' }

@@ -7,8 +7,7 @@ describe JenkinsCredentials do
 
   let(:username) { 'first' }
 
-  let(:root_dir) { Dir.pwd }
-  let(:credential_file_content) { IO.read(File.join(root_dir, 'spec', 'mock', 'jenkins_credentials', 'credentials.xml')) }
+  let(:credential_file_content) { IO.read(File.join(Dir.pwd, 'spec', 'mock', 'jenkins_credentials', 'credentials.xml')) }
 
   before(:each) do
     allow_any_instance_of(described_class).to receive(:inspec)
