@@ -3,7 +3,7 @@ require 'spec_helper'
 require_relative '../../libraries/jenkins_proxy'
 
 describe JenkinsProxy do
-  let(:subject) { described_class.new }
+  let(:subject) { described_class.new('5.6.7.8') }
 
   let(:job_file) { File.join(Dir.pwd, 'spec', 'mock', 'jenkins_proxy', 'proxy.xml') }
   let(:job_file_content) { IO.read(job_file) }
