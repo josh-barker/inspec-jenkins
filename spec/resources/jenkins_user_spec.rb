@@ -5,14 +5,15 @@ require_relative '../../libraries/jenkins_user'
 describe JenkinsUser do
   let(:subject) { described_class.new(user_id) }
 
-  let(:job_file) { File.join(Dir.pwd, 'spec', 'mock', 'jenkins_user', "#{user_id}.xml") }
-  let(:job_file_content) { IO.read(job_file) }
+  let(:mock_dir) { File.join(Dir.pwd, 'spec', 'mock', 'jenkins_user') }
+  let(:user_mapping_file_content) { IO.read(File.join(mock_dir, "users.xml")) }
+  let(:job_file_content) { IO.read(File.join(mock_dir, "#{user_id}.xml")) }
 
   before(:each) do
     allow_any_instance_of(described_class).to receive(:inspec)
   end
-  
-  context 'simple user' do
+
+  RSpec.shared_context 'simple user' do
     before(:each) do
       stub_inspec_file("/var/lib/jenkins/users/#{user_id}/config.xml", :file? => true, content: job_file_content)
     end
@@ -44,7 +45,7 @@ describe JenkinsUser do
     end
   end
 
-  context 'user with public keys and password hash' do
+  RSpec.shared_context 'user-chef' do
     before(:each) do
       stub_inspec_file("/var/lib/jenkins/users/#{user_id}/config.xml", :file? => true, content: job_file_content)
     end
@@ -76,7 +77,7 @@ describe JenkinsUser do
     end
   end
 
-  context 'user with password hash' do
+  RSpec.shared_context 'user with password hash' do
     before(:each) do
       stub_inspec_file("/var/lib/jenkins/users/#{user_id}/config.xml", :file? => true, content: job_file_content)
     end
@@ -108,7 +109,7 @@ describe JenkinsUser do
     end
   end
 
-  context 'user with multiple public keys' do
+  RSpec.shared_context 'user with multiple ssh keys' do
     before(:each) do
       stub_inspec_file("/var/lib/jenkins/users/#{user_id}/config.xml", :file? => true, content: job_file_content)
     end
@@ -140,7 +141,7 @@ describe JenkinsUser do
     end
   end
 
-  context 'user that is missing' do
+  RSpec.shared_context 'user that is missing' do
     before(:each) do
       stub_inspec_file("/var/lib/jenkins/users/#{user_id}/config.xml", :file? => false)
     end
@@ -171,5 +172,56 @@ describe JenkinsUser do
       expect(subject.password_hash).to be_nil
     end
   end
-end
+  
+  context "without user mapping" do
+    before(:each) do
+      stub_inspec_file('/var/lib/jenkins/users/users.xml', :file? => false)
+    end
 
+    context 'simple user' do
+      include_context 'simple user'
+    end
+
+    context 'user with public keys and password hash' do
+      include_context 'user-chef'
+    end
+
+    context 'user with password hash' do
+      include_context 'user with password hash'
+    end
+
+    context 'user with multiple public ssh keys' do
+      include_context 'user with multiple ssh keys'
+    end
+
+    context 'user that is missing' do
+      include_context 'user that is missing'
+    end
+  end
+  
+  context 'with user mapping' do
+    before(:each) do
+      stub_inspec_file('/var/lib/jenkins/users/users.xml', :file? => true, content: user_mapping_file_content)
+    end
+
+    context 'simple user' do
+      include_context 'simple user'
+    end
+
+    context 'user with public keys and password hash' do
+      include_context 'user-chef'
+    end
+
+    context 'user with password hash' do
+      include_context 'user with password hash'
+    end
+
+    context 'user with multiple public ssh keys' do
+      include_context 'user with multiple ssh keys'
+    end
+
+    context 'user that is missing' do
+      include_context 'user that is missing'
+    end
+  end
+end
