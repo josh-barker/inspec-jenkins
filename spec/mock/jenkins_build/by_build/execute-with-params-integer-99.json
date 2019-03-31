@@ -1,144 +1,132 @@
       {
         "status": "200",
         "body": {
-  "_class" : "hudson.model.FreeStyleProject",
-  "actions" : [
-    {
-      "_class" : "hudson.model.ParametersDefinitionProperty",
-      "parameterDefinitions" : [
-        {
-          "_class" : "hudson.model.StringParameterDefinition",
-          "defaultParameterValue" : {
-            "_class" : "hudson.model.StringParameterValue",
-            "value" : ""
+          "_class": "hudson.model.FreeStyleProject",
+          "actions": [
+            {
+              "_class": "hudson.model.ParametersDefinitionProperty",
+              "parameterDefinitions": [
+                {
+                  "_class": "hudson.model.StringParameterDefinition",
+                  "defaultParameterValue": {
+                    "_class": "hudson.model.StringParameterValue",
+                    "value": ""
+                  },
+                  "description": "",
+                  "name": "STRING_PARAM",
+                  "type": "StringParameterDefinition"
+                },
+                {
+                  "_class": "hudson.model.BooleanParameterDefinition",
+                  "defaultParameterValue": {
+                    "_class": "hudson.model.BooleanParameterValue",
+                    "value": false
+                  },
+                  "description": "",
+                  "name": "BOOLEAN_PARAM",
+                  "type": "BooleanParameterDefinition"
+                }
+              ]
+            },
+            {},
+            {},
+            {},
+            {},
+            {
+              "_class": "com.cloudbees.plugins.credentials.ViewCredentialsAction"
+            }
+          ],
+          "description": "",
+          "displayName": "execute-with-params",
+          "displayNameOrNull": null,
+          "fullDisplayName": "execute-with-params",
+          "fullName": "execute-with-params",
+          "name": "execute-with-params",
+          "url": "http://localhost:8080/job/execute-with-params/",
+          "buildable": true,
+          "builds": [
+            {
+              "_class": "hudson.model.FreeStyleBuild",
+              "number": 1,
+              "url": "http://localhost:8080/job/execute-with-params/1/"
+            }
+          ],
+          "color": "blue",
+          "firstBuild": {
+            "_class": "hudson.model.FreeStyleBuild",
+            "number": 1,
+            "url": "http://localhost:8080/job/execute-with-params/1/"
           },
-          "description" : "",
-          "name" : "STRING_PARAM",
-          "type" : "StringParameterDefinition"
-        },
-        {
-          "_class" : "hudson.model.BooleanParameterDefinition",
-          "defaultParameterValue" : {
-            "_class" : "hudson.model.BooleanParameterValue",
-            "value" : false
+          "healthReport": [
+            {
+              "description": "Build stability: No recent builds failed.",
+              "iconClassName": "icon-health-80plus",
+              "iconUrl": "health-80plus.png",
+              "score": 100
+            }
+          ],
+          "inQueue": false,
+          "keepDependencies": false,
+          "lastBuild": {
+            "_class": "hudson.model.FreeStyleBuild",
+            "number": 1,
+            "url": "http://localhost:8080/job/execute-with-params/1/"
           },
-          "description" : "",
-          "name" : "BOOLEAN_PARAM",
-          "type" : "BooleanParameterDefinition"
+          "lastCompletedBuild": {
+            "_class": "hudson.model.FreeStyleBuild",
+            "number": 1,
+            "url": "http://localhost:8080/job/execute-with-params/1/"
+          },
+          "lastFailedBuild": null,
+          "lastStableBuild": {
+            "_class": "hudson.model.FreeStyleBuild",
+            "number": 1,
+            "url": "http://localhost:8080/job/execute-with-params/1/"
+          },
+          "lastSuccessfulBuild": {
+            "_class": "hudson.model.FreeStyleBuild",
+            "number": 1,
+            "url": "http://localhost:8080/job/execute-with-params/1/"
+          },
+          "lastUnstableBuild": null,
+          "lastUnsuccessfulBuild": null,
+          "nextBuildNumber": 2,
+          "property": [
+            {
+              "_class": "hudson.model.ParametersDefinitionProperty",
+              "parameterDefinitions": [
+                {
+                  "_class": "hudson.model.StringParameterDefinition",
+                  "defaultParameterValue": {
+                    "_class": "hudson.model.StringParameterValue",
+                    "name": "STRING_PARAM",
+                    "value": ""
+                  },
+                  "description": "",
+                  "name": "STRING_PARAM",
+                  "type": "StringParameterDefinition"
+                },
+                {
+                  "_class": "hudson.model.BooleanParameterDefinition",
+                  "defaultParameterValue": {
+                    "_class": "hudson.model.BooleanParameterValue",
+                    "name": "BOOLEAN_PARAM",
+                    "value": false
+                  },
+                  "description": "",
+                  "name": "BOOLEAN_PARAM",
+                  "type": "BooleanParameterDefinition"
+                }
+              ]
+            }
+          ],
+          "queueItem": null,
+          "concurrentBuild": false,
+          "downstreamProjects": [],
+          "labelExpression": null,
+          "scm": {
+            "_class": "hudson.scm.NullSCM"
+          },
+          "upstreamProjects": []
         }
-      ]
-    },
-    {
-      
-    },
-    {
-      
-    },
-    {
-      
-    },
-    {
-      
-    },
-    {
-      "_class" : "com.cloudbees.plugins.credentials.ViewCredentialsAction"
-    }
-  ],
-  "description" : "",
-  "displayName" : "execute-with-params",
-  "displayNameOrNull" : null,
-  "fullDisplayName" : "execute-with-params",
-  "fullName" : "execute-with-params",
-  "name" : "execute-with-params",
-  "url" : "http://localhost:8080/job/execute-with-params/",
-  "buildable" : true,
-  "builds" : [
-    {
-      "_class" : "hudson.model.FreeStyleBuild",
-      "number" : 1,
-      "url" : "http://localhost:8080/job/execute-with-params/1/"
-    }
-  ],
-  "color" : "blue",
-  "firstBuild" : {
-    "_class" : "hudson.model.FreeStyleBuild",
-    "number" : 1,
-    "url" : "http://localhost:8080/job/execute-with-params/1/"
-  },
-  "healthReport" : [
-    {
-      "description" : "Build stability: No recent builds failed.",
-      "iconClassName" : "icon-health-80plus",
-      "iconUrl" : "health-80plus.png",
-      "score" : 100
-    }
-  ],
-  "inQueue" : false,
-  "keepDependencies" : false,
-  "lastBuild" : {
-    "_class" : "hudson.model.FreeStyleBuild",
-    "number" : 1,
-    "url" : "http://localhost:8080/job/execute-with-params/1/"
-  },
-  "lastCompletedBuild" : {
-    "_class" : "hudson.model.FreeStyleBuild",
-    "number" : 1,
-    "url" : "http://localhost:8080/job/execute-with-params/1/"
-  },
-  "lastFailedBuild" : null,
-  "lastStableBuild" : {
-    "_class" : "hudson.model.FreeStyleBuild",
-    "number" : 1,
-    "url" : "http://localhost:8080/job/execute-with-params/1/"
-  },
-  "lastSuccessfulBuild" : {
-    "_class" : "hudson.model.FreeStyleBuild",
-    "number" : 1,
-    "url" : "http://localhost:8080/job/execute-with-params/1/"
-  },
-  "lastUnstableBuild" : null,
-  "lastUnsuccessfulBuild" : null,
-  "nextBuildNumber" : 2,
-  "property" : [
-    {
-      "_class" : "hudson.model.ParametersDefinitionProperty",
-      "parameterDefinitions" : [
-        {
-          "_class" : "hudson.model.StringParameterDefinition",
-          "defaultParameterValue" : {
-            "_class" : "hudson.model.StringParameterValue",
-            "name" : "STRING_PARAM",
-            "value" : ""
-          },
-          "description" : "",
-          "name" : "STRING_PARAM",
-          "type" : "StringParameterDefinition"
-        },
-        {
-          "_class" : "hudson.model.BooleanParameterDefinition",
-          "defaultParameterValue" : {
-            "_class" : "hudson.model.BooleanParameterValue",
-            "name" : "BOOLEAN_PARAM",
-            "value" : false
-          },
-          "description" : "",
-          "name" : "BOOLEAN_PARAM",
-          "type" : "BooleanParameterDefinition"
-        }
-      ]
-    }
-  ],
-  "queueItem" : null,
-  "concurrentBuild" : false,
-  "downstreamProjects" : [
-    
-  ],
-  "labelExpression" : null,
-  "scm" : {
-    "_class" : "hudson.scm.NullSCM"
-  },
-  "upstreamProjects" : [
-    
-  ]
-}
       }
