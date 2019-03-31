@@ -1,65 +1,57 @@
       {
         "status": "200",
         "body": {
-  "_class" : "hudson.model.FreeStyleBuild",
-  "actions" : [
-    {
-      "_class" : "hudson.model.CauseAction",
-      "causes" : [
-        {
-          "_class" : "hudson.cli.BuildCommand$CLICause",
-          "shortDescription" : "Started from command line by Chef Client",
-          "userId" : "chef",
-          "userName" : "Chef Client"
+          "_class": "hudson.model.FreeStyleBuild",
+          "actions": [
+            {
+              "_class": "hudson.model.CauseAction",
+              "causes": [
+                {
+                  "_class": "hudson.cli.BuildCommand$CLICause",
+                  "shortDescription": "Started from command line by Chef Client",
+                  "userId": "chef",
+                  "userName": "Chef Client"
+                }
+              ]
+            },
+            {
+              "_class": "hudson.model.ParametersAction",
+              "parameters": [
+                {
+                  "_class": "hudson.model.BooleanParameterValue",
+                  "name": "BOOLEAN_PARAM",
+                  "value": true
+                },
+                {
+                  "_class": "hudson.model.StringParameterValue",
+                  "name": "STRING_PARAM",
+                  "value": "meeseeks"
+                }
+              ]
+            },
+            {}
+          ],
+          "artifacts": [],
+          "building": false,
+          "description": null,
+          "displayName": "#1",
+          "duration": 37,
+          "estimatedDuration": 37,
+          "executor": null,
+          "fullDisplayName": "execute-with-params #1",
+          "id": "1",
+          "keepLog": false,
+          "number": 1,
+          "queueId": 2,
+          "result": "SUCCESS",
+          "timestamp": 1541461898066,
+          "url": "http://localhost:8080/job/execute-with-params/1/",
+          "builtOn": "",
+          "changeSet": {
+            "_class": "hudson.scm.EmptyChangeLogSet",
+            "items": [],
+            "kind": null
+          },
+          "culprits": []
         }
-      ]
-    },
-    {
-      "_class" : "hudson.model.ParametersAction",
-      "parameters" : [
-        {
-          "_class" : "hudson.model.BooleanParameterValue",
-          "name" : "BOOLEAN_PARAM",
-          "value" : true
-        },
-        {
-          "_class" : "hudson.model.StringParameterValue",
-          "name" : "STRING_PARAM",
-          "value" : "meeseeks"
-        }
-      ]
-    },
-    {
-      
-    }
-  ],
-  "artifacts" : [
-    
-  ],
-  "building" : false,
-  "description" : null,
-  "displayName" : "#1",
-  "duration" : 37,
-  "estimatedDuration" : 37,
-  "executor" : null,
-  "fullDisplayName" : "execute-with-params #1",
-  "id" : "1",
-  "keepLog" : false,
-  "number" : 1,
-  "queueId" : 2,
-  "result" : "SUCCESS",
-  "timestamp" : 1541461898066,
-  "url" : "http://localhost:8080/job/execute-with-params/1/",
-  "builtOn" : "",
-  "changeSet" : {
-    "_class" : "hudson.scm.EmptyChangeLogSet",
-    "items" : [
-      
-    ],
-    "kind" : null
-  },
-  "culprits" : [
-    
-  ]
-}
       }
