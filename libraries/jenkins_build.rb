@@ -55,7 +55,7 @@ class JenkinsBuild < JenkinsBase
     opts = {}
     worker = rest_call('GET', build_result_url, opts)
 
-    @json = if worker.status == 404
+    @json = if worker.status.to_i == 404
               nil
             else
               JSON.parse(worker.body, symbolize_names: true)
@@ -66,7 +66,7 @@ class JenkinsBuild < JenkinsBase
     build_url = "http://localhost:8080/job/#{build_name}/api/json?pretty=true"
     worker = rest_call('GET', build_url, {})
 
-    return unless worker.status == '200'
+    return unless worker.status.to_i == 200
 
     build_json = JSON.parse(worker.body, symbolize_names: true)
     return unless build_json[build_tag.to_sym]
