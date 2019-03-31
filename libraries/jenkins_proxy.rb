@@ -7,6 +7,12 @@
 class JenkinsProxy < JenkinsBase
   name 'jenkins_proxy'
 
+  attr_reader :id
+
+  def initialize(id)
+    @id = id
+  end
+
   def exist?
     !xml.nil?
   end
@@ -26,7 +32,7 @@ class JenkinsProxy < JenkinsBase
   end
 
   def to_s
-    'Jenkins Proxy'
+    "Jenkins Proxy #{id}"
   end
 
   private
