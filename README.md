@@ -153,7 +153,7 @@ control 'jenkins_user-example' do
     it { should exist }
     its('full_name') { should eq('Some User') }
     its('email') { should eq('someuser@somewhere.io') }
-    its('public_key') { should include('ssh-rsa AAAAAAA') }
+    its('public_keys') { should include('ssh-rsa AAAAAAA') }
   end
 end
 ```

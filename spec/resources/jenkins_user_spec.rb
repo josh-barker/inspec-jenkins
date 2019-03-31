@@ -36,7 +36,7 @@ describe JenkinsUser do
     end
 
     it 'publickey is set' do
-      expect(subject.public_key).to eq []
+      expect(subject.public_keys).to eq []
     end
 
     it 'password_hash is set' do
@@ -68,7 +68,7 @@ describe JenkinsUser do
     end
 
     it 'public key is set' do
-      expect(subject.public_key).to eq ['ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDO66p1CYctGZW/eq8ywBqV4+/AxIinZa4SrZhIf3ShGVihFryHiVPYKVhwh7t01/hU1bc085ZUFFafcX1Ie3Gt8K1Ltfmmtik+EFFRZ3FAy+4Ye8XnFTyr3e2O9m/tg9YG/E/1HeeW8frrW40Ub7CJYpZp8xPqCyj5+vyHytnBT6g/XXgt0vcl8jQGAnytj6UN+DZc3EvPnKyTIjXHlYgvTE3EWJgThe5BUu7b1+rO0aQVI4tlHjVce4iLnN+0E3GQuE9Kkzblq418LtkB6hgTQEKGP2MPa7MX3zdH19P0F+SwBRS60X/40uhgp5X94VZIlJODXL8Z8SFNnYfr0LhF']
+      expect(subject.public_keys).to eq ['ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDO66p1CYctGZW/eq8ywBqV4+/AxIinZa4SrZhIf3ShGVihFryHiVPYKVhwh7t01/hU1bc085ZUFFafcX1Ie3Gt8K1Ltfmmtik+EFFRZ3FAy+4Ye8XnFTyr3e2O9m/tg9YG/E/1HeeW8frrW40Ub7CJYpZp8xPqCyj5+vyHytnBT6g/XXgt0vcl8jQGAnytj6UN+DZc3EvPnKyTIjXHlYgvTE3EWJgThe5BUu7b1+rO0aQVI4tlHjVce4iLnN+0E3GQuE9Kkzblq418LtkB6hgTQEKGP2MPa7MX3zdH19P0F+SwBRS60X/40uhgp5X94VZIlJODXL8Z8SFNnYfr0LhF']
     end
 
     it 'password hash is set' do
@@ -100,7 +100,7 @@ describe JenkinsUser do
     end
 
     it 'public key is set' do
-      expect(subject.public_key).to eq []
+      expect(subject.public_keys).to eq []
     end
 
     it 'password hash is set' do
@@ -132,7 +132,7 @@ describe JenkinsUser do
     end
 
     it 'public key is set' do
-      expect(subject.public_key).to eq ['ssh-rsa BBBBBBB', 'ssh-rsa CCCCCCC']
+      expect(subject.public_keys).to eq ['ssh-rsa BBBBBBB', 'ssh-rsa CCCCCCC']
     end
 
     it 'password hash is set' do
@@ -164,7 +164,7 @@ describe JenkinsUser do
     end
 
     it 'public key is set' do
-      expect(subject.public_key).to eq []
+      expect(subject.public_keys).to eq []
     end
 
     it 'password hash is set' do
