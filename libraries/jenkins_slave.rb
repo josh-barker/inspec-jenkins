@@ -151,7 +151,7 @@ class JenkinsSlave < JenkinsBase
     config_url = "http://localhost:8080/computer/#{name}/config.xml"
     worker = rest_call('GET', config_url, {})
 
-    @xml = case worker.status
+    @xml = case worker.status.to_i
            when 404
              nil
            when 403
@@ -178,7 +178,7 @@ class JenkinsSlave < JenkinsBase
     opts = {}
     worker = rest_call('GET', config_url, opts)
 
-    @json = if worker.status == 404
+    @json = if worker.status.to_i == 404
               nil
             else
               JSON.parse(worker.body, symbolize_names: true)
